@@ -1,24 +1,38 @@
-# README
+# Gamers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## サイト概要
+プレイしたゲームの感想を投稿するSNSサイトです。フォロー機能、コメント機能などを利用することで、ユーザーどうしで交流することが可能です。
 
-* Ruby version
 
-* System dependencies
+### サイトテーマ
+プレイしたゲームの情報を共有し合えるSNSサイト
 
-* Configuration
 
-* Database creation
+### テーマを選んだ理由
+自分自身ゲームが好きで様々な種類のゲームをプレイするのですが、購入前にはそのゲームをプレイした他のユーザーの感想を見てからプレイするか決めることが多いです。
+今まではおすすめゲームランキングのようなサイトを使ってゲームを選んできたのですが、もっとたくさんのユーザーが感想を投稿出来るようになれば、自身がこれからプレイするゲームの良い判断材料になると考えこのテーマを選びました。
+また、投稿に対してのコメント機能、フォロー機能により、たくさんのユーザーと交流することが可能で、より一層ゲームを楽しむことが出来るようになると考えています。
 
-* Database initialization
 
-* How to run the test suite
+### ターゲットユーザ
+ゲームをプレイすることが好きな人
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### 主な利用シーン
+ゲームの感想を共有したい時
 
-* ...
+
+## 設計書
+<https://app.diagrams.net/#G1Q03N69rWsa0Fgul2_AVbD_c8IfL9F1ns>
+
+
+### 機能一覧
+<https://docs.google.com/spreadsheets/d/1hkDMDed_RYoZDWVlEsipf89hplqrJqNzU-7oEbqaI-I/edit#gid=0>
+
+
+## 開発環境
+- 言語：HTML,CSS,JavaScript,Ruby
+- フレームワーク：Ruby on Rails
+- JS ライブラリ：jQuery
+- 仮想環境：cloud9
