@@ -1,2 +1,23 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<h2>TOP</h2>
+
+<p>
+ ようこそ、Gamersへ！
+</p>
+
+<p>
+ このサイトは、ゲームの感想を投稿するSNSサイトになります。
+</p>
+
+<p>
+ 利用にはには会員登録が必要になります。
+</p>
+
+<h2>新規会員登録</h2>
+<div>
+  <div><%= link_to "こちら", new_user_registration_path %>からサインアップしてください。</div>
+</div>
+
+<h2>既に登録済みの方</h2>
+<div>
+  <div><%= link_to "こちら", new_user_session_path %>からログインしてください。</div>
+</div>
