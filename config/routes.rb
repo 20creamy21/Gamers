@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get '/about' => 'homes#about'
 
-  resources :games, only: [:new, :create, :index, :show, :destroy] do
+  resources :posts, only: [:new, :create, :index, :show, :destroy] do
     resource :favorites, only: [:create, :destroy]
   end
 

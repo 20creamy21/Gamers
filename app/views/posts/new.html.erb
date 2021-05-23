@@ -1,0 +1,10 @@
+<h2>投稿</h2>
+
+<%= form_with model: @post, url: posts_path, local:true do |f| %>
+
+  <div>
+   <label for="name">ゲーム名</label>
+   <div><%= f.text_field :name, autofocus: true, id:"name" %></div>
+  </div>
+
+<% end %>
