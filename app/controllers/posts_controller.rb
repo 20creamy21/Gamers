@@ -5,6 +5,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(post_params)
+    @post.save
+    redirect_to posts_path
   end
 
   def index
@@ -15,4 +18,11 @@ class PostsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :name, :platform, :genre, :thought, :note, :created_at)
+  end
+
 end

@@ -3,8 +3,37 @@
 <%= form_with model: @post, url: posts_path, local:true do |f| %>
 
   <div>
+   <label for="title">タイトル</label>
+   <div><%= f.text_field :title, id:"title" %></div>
+  </div>
+
+  <div>
    <label for="name">ゲーム名</label>
-   <div><%= f.text_field :name, autofocus: true, id:"name" %></div>
+   <div><%= f.text_field :name, id:"name" %></div>
+  </div>
+
+  <div>
+   <label for="platform">プラットフォーム</label>
+   <div><%= f.text_field :platform, id:"platform" %></div>
+  </div>
+
+  <div>
+   <label for="genre">ジャンル</label>
+   <div><%= f.text_field :genre, id:"genre" %></div>
+  </div>
+
+  <div>
+   <label for="thought">感想</label>
+   <div><%= f.text_field :thought, id:"thought" %></div>
+  </div>
+
+  <div>
+   <label for="note">備考</label>
+   <div><%= f.text_field :note, id:"note" %></div>
+  </div>
+
+  <div>
+    <%= f.submit "投稿する" %>
   </div>
 
 <% end %>
