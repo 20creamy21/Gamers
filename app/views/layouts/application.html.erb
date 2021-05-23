@@ -10,11 +10,27 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
+    <header>
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to "HOME", games_path %>
+      </li>
+      <li>
+        <%= link_to "投稿", new_game_path %>
+      </li>
+      <li>
+        <%= link_to "ランキング", ranks_index_path %>
+      </li>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
+      <li>
+        <%= link_to "TOP", root_path %>
+      </li>
+      <li>
+        <%= link_to "ABOUT", about_path %>
+      </li>
       <li>
         <%= link_to "サインアップ", new_user_registration_path %>
       </li>
@@ -22,6 +38,10 @@
         <%= link_to "ログイン", new_user_session_path %>
       </li>
     <% end %>
+    </header>
     <%= yield %>
+    <footer>
+
+    </footer>
   </body>
 </html>
