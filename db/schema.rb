@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_23_135927) do
+ActiveRecord::Schema.define(version: 2021_05_23_113811) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2021_05_23_135927) do
     t.integer "user_id"
     t.string "title"
     t.string "name"
-    t.string "platform"
-    t.string "genre"
+    t.integer "platform", default: 0
+    t.integer "genre", default: 0
     t.string "thought"
     t.string "evaluation"
     t.string "note"

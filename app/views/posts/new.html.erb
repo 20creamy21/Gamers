@@ -14,12 +14,50 @@
 
   <div>
    <label for="platform">プラットフォーム</label>
-   <div><%= f.text_field :platform, id:"platform" %></div>
+   <div>
+    <%= f.radio_button :platform, :PlayStation4 %>
+			 <%= f.label :platform, "PlayStation4" %>
+			</div>
+			<div>
+    <%= f.radio_button :platform, :PlayStation5 %>
+			 <%= f.label :platform, "PlayStation5" %>
+			</div>
+			<div>
+    <%= f.radio_button :platform, :NintendoSwitch %>
+			 <%= f.label :platform, "NintendoSwitch" %>
+			</div>
+			<div>
+    <%= f.radio_button :platform, :Nintendo3DS %>
+			 <%= f.label :platform, "Nintendo3DS" %>
+			</div>
+			<div>
+    <%= f.radio_button :platform, :その他のプラットフォーム %>
+			 <%= f.label :platform, "その他のプラットフォーム" %>
+			</div>
   </div>
 
   <div>
    <label for="genre">ジャンル</label>
-   <div><%= f.text_field :genre, id:"genre" %></div>
+   <div>
+    <%= f.radio_button :genre, :アクション %>
+			 <%= f.label :genre, "アクション" %>
+			</div>
+			<div>
+    <%= f.radio_button :genre, :シューティング %>
+			 <%= f.label :genre, "シューティング" %>
+			</div>
+			<div>
+    <%= f.radio_button :genre, :レーシング %>
+			 <%= f.label :genre, "レーシング" %>
+			</div>
+			<div>
+    <%= f.radio_button :genre, :ロールプレイング %>
+			 <%= f.label :genre, "ロールプレイング" %>
+			</div>
+			<div>
+    <%= f.radio_button :genre, :その他のジャンル %>
+			 <%= f.label :genre, "その他のジャンル" %>
+			</div>
   </div>
 
   <div>

@@ -4,8 +4,8 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :title
       t.string :name
-      t.string :platform
-      t.string :genre
+      t.integer :platform, default: 0
+      t.integer :genre, default: 0
       t.string :thought
       t.string :evaluation
       t.string :note
