@@ -13,18 +13,18 @@
       <tr>
         <td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.name %></td>
-        <td>
-          <script>
-            $('.post-evaluation').raty({
-              readOnly: true,
-              score: function() {
-                return $(this).attr('data-score');
-              },
-              path: '/assets/'
-            });
-          </script>
-        </td>
+        <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<script>
+  $('.post-evaluation').raty({
+   readOnly: true,
+    score: function() {
+    return $(this).attr('data-score');
+    },
+    path: '/assets/'
+    });
+</script>
