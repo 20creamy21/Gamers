@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
 
-  has_many :posts, dependent: :destroy
+  belongs_to :comment
   belongs_to :user
 
 end
