@@ -66,3 +66,5 @@ gem 'devise'
 gem 'jquery-rails'
 
 gem 'pry-byebug'
+
+gem 'ransack'

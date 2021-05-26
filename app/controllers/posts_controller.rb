@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @q = Post.ransack(params[:q])
     @posts = Post.all
   end
 
