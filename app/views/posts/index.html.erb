@@ -1,4 +1,4 @@
-<h2>ホーム</h2>
+<h2>HOME</h2>
 
 <table>
   <thead>
@@ -6,6 +6,7 @@
       <th>タイトル</th>
       <th>ゲーム名</th>
       <th>評価</th>
+      <th>投稿日時</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,7 @@
         <td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.name %></td>
         <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
+        <td><%= l post.created_at %></td>
       </tr>
     <% end %>
   </tbody>
