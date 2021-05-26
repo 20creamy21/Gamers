@@ -1,40 +1,44 @@
 <h2><%= @post.title %></h2>
 
-  <div>
-   <div>ゲーム名</div>
-   <div><%= @post.name %></div>
-  </div>
+<div>
+  <div>ゲーム名</div>
+  <div><%= @post.name %></div>
+</div>
 
-  <div>
-   <div>プラットフォーム</div>
-	 <div><%= @post.platform %></div>
-  </div>
+<div>
+  <div>プラットフォーム</div>
+	<div><%= @post.platform %></div>
+</div>
 
-  <div>
-   <div>ジャンル</div>
-	 <div><%= @post.genre %></div>
-  </div>
+<div>
+  <div>ジャンル</div>
+	<div><%= @post.genre %></div>
+</div>
 
-  <div>
-    <div>評価</div>
-    <div class="post-evaluation" data-score="<%= @post.evaluation %>"></div>
-    <script>
-      $('.post-evaluation').raty({
-      readOnly: true,
-      score: function() {
-      return $(this).attr('data-score');
-      },
-      path: '/assets/'
-      });
-    </script>
-  </div>
+<div>
+  <div>評価</div>
+  <div class="post-evaluation" data-score="<%= @post.evaluation %>"></div>
+  <script>
+    $('.post-evaluation').raty({
+    readOnly: true,
+    score: function() {
+    return $(this).attr('data-score');
+    },
+    path: '/assets/'
+    });
+  </script>
+</div>
 
-  <div>
-   <div>感想</div>
-   <div><%= @post.thought %></div>
-  </div>
+<div>
+  <div>感想</div>
+  <div><%= @post.thought %></div>
+</div>
 
-  <div>
-   <div>備考</div>
-   <div><%= @post.note %></div>
-  </div>
+<div>
+  <div>備考</div>
+  <div><%= @post.note %></div>
+</div>
+
+<% if current_user.id == @post.user_id %>
+  <div><%= link_to "投稿削除", post_path(@post), method: :delete %></div>
+<% end %>
