@@ -44,7 +44,12 @@
   <div><%= l @post.created_at %></div>
 </div>
 
+<div>
+  <%= link_to "コメントする", new_comment_path %>
+</div>
 
-<% if current_user.id == @post.user_id %>
-  <div><%= link_to "投稿削除", post_path(@post), method: :delete %></div>
-<% end %>
+<div>
+  <% if current_user.id == @post.user_id %>
+    <div><%= link_to "投稿削除", post_path(@post), method: :delete %></div>
+  <% end %>
+</div>

@@ -1,2 +1,6 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<h2>コメント</h2>
+
+<%= form_with model: @post, url: posts_path, local:true do |f| %>
+  <div><%= f.text_field :comment %></div>
+  <div><%= f.submit "投稿する" %></div>
+<% end %>

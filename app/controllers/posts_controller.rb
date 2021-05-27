@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    @posts = Post.all
+    @posts = @q.result(distinct: true)
   end
 
   def show
