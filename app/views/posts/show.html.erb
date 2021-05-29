@@ -45,7 +45,15 @@
 </div>
 
 <div>
-  <%= link_to "コメントする", new_comment_path %>
+  <div>コメント</div>
+  <div>
+    <% @comments.each do |comment| %>
+    <%= comment.comment %>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to "コメントする", new_comment_path(post_id: @post.id) %>
+  </div>
 </div>
 
 <div>

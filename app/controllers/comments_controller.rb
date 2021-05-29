@@ -1,13 +1,17 @@
 class CommentsController < ApplicationController
 
   def new
-    @comment = Comment.new
+    @comment = current_user.comments.build
+    @comment.post_id = params[:post_id]
   end
 
   def create
-    @commnet = current_user.comments.new(comment_params)
-    @comment.save
-    redirect_to post_path(@comment.post)
+    @comment = Comment.new(comment_params.merge(post_id: params[:post_id], user_id: current_user.id))
+    if @comment.save
+      redirect_to post_path(@comment.post)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -16,7 +20,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:comment, :created_at)
+    params.require(:comment).permit(:comment, :post_id)
   end
 
 end
