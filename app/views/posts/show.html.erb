@@ -48,7 +48,16 @@
   <div>コメント</div>
   <div>
     <% @comments.each do |comment| %>
-    <%= comment.comment %>
+      <% if current_user.id == comment.user_id %>
+        <div>
+          <div><%= comment.comment %></div>
+          <div><%= link_to "コメント削除", comment_path(comment), method: :delete %></div>
+        </div>
+      <% else %>
+        <div>
+          <%= comment.comment %>
+        </div>
+      <% end %>
     <% end %>
   </div>
   <div>
