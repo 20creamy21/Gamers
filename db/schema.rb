@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_122349) do
+ActiveRecord::Schema.define(version: 2021_05_30_045007) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -34,11 +34,20 @@ ActiveRecord::Schema.define(version: 2021_05_24_122349) do
     t.integer "platform", default: 0
     t.integer "genre", default: 0
     t.string "thought"
-    t.float "rate"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "evaluation"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "follow_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

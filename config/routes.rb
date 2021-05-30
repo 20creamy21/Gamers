@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   get 'ranks/index'
 
+  resources :relationships, only: [:create, :destroy]
+
 end
