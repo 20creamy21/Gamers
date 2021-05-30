@@ -7,12 +7,12 @@
 
 <div>
   <div>フォロー中</div>
-  <div><%= @user.followings.count %></div>
+  <div><%= link_to @user.followings.count, users_follow_index_path %></div>
 </div>
 
 <div>
   <div>フォロワー</div>
-  <div><%= @user.followers.count %></div>
+  <div><%= link_to @user.followers.count, users_follower_index_path %></div>
 </div>
 
 <div>
