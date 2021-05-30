@@ -12,6 +12,7 @@
       <th>タイトル</th>
       <th>ゲーム名</th>
       <th>評価</th>
+      <th>投稿者</th>
       <th>投稿日時</th>
     </tr>
   </thead>
@@ -21,6 +22,7 @@
         <td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.name %></td>
         <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
+        <td><%= post.user.name %></td>
         <td><%= l post.created_at %></td>
       </tr>
     <% end %>
