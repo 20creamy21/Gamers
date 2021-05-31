@@ -2,7 +2,7 @@
 
 <div>
   <div>投稿者</div>
-  <div><%= @post.user.name %></div>
+  <div><%= link_to @post.user.name, user_path(@post.user) %></div>
 </div>
 
 <div>

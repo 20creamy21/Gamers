@@ -1,5 +1,18 @@
 <h2>フォロワー一覧</h2>
 
-<% @users.each do |user| %>
-  <%= user.name %>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>ユーザー名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= link_to user.name, user_path(user) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
