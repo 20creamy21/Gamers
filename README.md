@@ -35,4 +35,4 @@
 - 言語：HTML,CSS,JavaScript,Ruby
 - フレームワーク：Ruby on Rails
 - JS ライブラリ：jQuery
-- 仮想環境：cloud9
+- IDE : Cloud9

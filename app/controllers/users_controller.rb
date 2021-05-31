@@ -7,11 +7,13 @@ class UsersController < ApplicationController
   end
 
   def follow_index
-    @users = User.all
+    @user = current_user
+    @users = @user.followings
   end
 
   def follower_index
-    @users = User.all
+    @user = current_user
+    @users = @user.followers
   end
 
 end
