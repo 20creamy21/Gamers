@@ -7,12 +7,12 @@ class UsersController < ApplicationController
   end
 
   def follow_index
-    @user = current_user
+    @user = User.find(params[:id])
     @users = @user.followings
   end
 
   def follower_index
-    @user = current_user
+    @user = User.find(params[:id])
     @users = @user.followers
   end
 
