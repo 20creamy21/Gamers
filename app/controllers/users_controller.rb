@@ -16,4 +16,11 @@ class UsersController < ApplicationController
     @users = @user.followers
   end
 
+  def index
+    @user = current_user
+    @users = @user.followings
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
+  end
+
 end

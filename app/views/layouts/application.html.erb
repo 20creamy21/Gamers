@@ -24,7 +24,10 @@
                   <%= link_to "マイページ", user_path(current_user.id), class: 'nav-link text-dark' %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "HOME", posts_path, class: 'nav-link text-dark' %>
+                  <%= link_to "投稿一覧", posts_path, class: 'nav-link text-dark' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "投稿一覧（フォローユーザーのみ）", users_path, class: 'nav-link text-dark' %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "投稿", new_post_path, class: 'nav-link text-dark' %>

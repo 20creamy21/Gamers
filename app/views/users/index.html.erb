@@ -1,4 +1,4 @@
-<h2>ランキング</h2>
+<h2>投稿一覧（フォローユーザーのみ）</h2>
 
 <%= search_form_for @q do |f| %>
   <%= f.label :name, "キーワード(ゲーム名）" %>
@@ -17,13 +17,13 @@
     </tr>
   </thead>
   <tbody>
-    <% @posts.each do |post| %>
+    <% @users.each do |user| %>
       <tr>
-        <td><%= link_to post.title, post_path(post) %></td>
-        <td><%= post.name %></td>
-        <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
-        <td><%= post.user.name %></td>
-        <td><%= l post.created_at %></td>
+        <td><%= link_to user.post.title, post_path(follow_user) %></td>
+        <td><%= user.post.name %></td>
+        <td class="post-evaluation" data-score="<%= user.evaluation %>"></td>
+        <td><%= user.name %></td>
+        <td><%= l user.post.created_at %></td>
       </tr>
     <% end %>
   </tbody>
