@@ -2,7 +2,7 @@
 
 <%= search_form_for @q, url: users_path do |f| %>
   <%= f.label :name, "キーワード(ゲーム名）" %>
-  <%= f.search_field :name_cont %>
+  <%= f.search_field :name_or_title_or_user_name_cont %>
   <%= f.submit "検索" %>
 <% end %>
 
