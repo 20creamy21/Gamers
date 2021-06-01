@@ -17,13 +17,13 @@
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
+    <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to user.post.title, post_path(follow_user) %></td>
-        <td><%= user.post.name %></td>
-        <td class="post-evaluation" data-score="<%= user.evaluation %>"></td>
-        <td><%= user.name %></td>
-        <td><%= l user.post.created_at %></td>
+        <td><%= link_to post.title, post_path(post) %></td>
+        <td><%= post.name %></td>
+        <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
+        <td><%= post.user.name %></td>
+        <td><%= l post.created_at %></td>
       </tr>
     <% end %>
   </tbody>

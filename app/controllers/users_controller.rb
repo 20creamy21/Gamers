@@ -18,9 +18,9 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    @users = @user.followings
+    follow_user_ids = @user.followings.pluck(:id)
+    @posts = Post.where(user_id: follow_user_ids)
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
   end
 
 end
