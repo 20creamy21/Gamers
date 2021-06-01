@@ -26,9 +26,9 @@
         <td><%= l post.created_at %></td>
       </tr>
     <% end %>
+    <%= paginate @posts %>
   </tbody>
 </table>
-
 
 <script>
   $('.post-evaluation').raty({

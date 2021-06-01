@@ -18,9 +18,13 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    follow_user_ids = @user.followings.pluck(:id)
-    @posts = Post.where(user_id: follow_user_ids)
+    # follow_user_ids = @user.followings.pluck(:id)
+    # @posts = Post.where(user_id: follow_user_ids)
     @q = Post.ransack(params[:q])
+
+    follow_user_ids = @user.followings.pluck(:id)
+    @post = Post.page(params[:page]).reverse_order
+    @posts = @post.where(user_id: follow_user_ids)
   end
 
 end

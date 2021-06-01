@@ -17,12 +17,12 @@ class PostsController < ApplicationController
 #    search = params[:q][:name_or_title_cont]
 #    @result = Post.where("name like '%#{search}%' or title like '%#{search}%'")
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    # @posts = @q.result(distinct: true)
+    @posts = Post.page(params[:page]).reverse_order
   end
 
   def show
     @post = Post.find(params[:id])
-    # @comment = Comment.find(params[:id])
     @comments = Comment.all
     @user = @post.user
   end
