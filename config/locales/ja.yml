@@ -1,4 +1,20 @@
 ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        title: タイトル
+        name: ゲーム名
+        platform: プラットフォーム
+        genre: ジャンル
+        thought: 感想
+        evaluation: 評価
+    models:
+      comment: コメント
+    attributes:
+      comment:
+        comment: コメント
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
