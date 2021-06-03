@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def new
     @post = Post.new
   end
@@ -14,8 +13,8 @@ class PostsController < ApplicationController
   end
 
   def index
-#    search = params[:q][:name_or_title_cont]
-#    @result = Post.where("name like '%#{search}%' or title like '%#{search}%'")
+    # search = params[:q][:name_or_title_cont]
+    # @result = Post.where("name like '%#{search}%' or title like '%#{search}%'")
     @q = Post.ransack(params[:q])
     # @posts = @q.result(distinct: true)
     @posts = Post.page(params[:page]).reverse_order
@@ -38,5 +37,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :name, :platform, :genre, :thought, :note, :evaluation, :created_at)
   end
-
 end

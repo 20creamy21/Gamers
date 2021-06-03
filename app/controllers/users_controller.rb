@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def show
     @user = User.find(params[:id])
     @posts = Post.all
@@ -26,5 +25,4 @@ class UsersController < ApplicationController
     @post = Post.page(params[:page]).reverse_order
     @posts = @post.where(user_id: follow_user_ids)
   end
-
 end

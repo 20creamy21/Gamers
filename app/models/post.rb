@@ -1,7 +1,13 @@
 class Post < ApplicationRecord
-
   belongs_to :user
   has_many :comments
+
+  validates :title, presence: true
+  validates :name, presence: true
+  validates :platform, presence: true
+  validates :genre, presence: true
+  validates :thought, presence: true
+  validates :evaluation, presence: true
 
   enum platform: {
     PlayStation4: 0,
@@ -18,5 +24,4 @@ class Post < ApplicationRecord
     ロールプレイング: 3,
     その他のジャンル: 4
   }
-
 end

@@ -5,5 +5,4 @@ class RanksControllerTest < ActionDispatch::IntegrationTest
     get ranks_index_url
     assert_response :success
   end
-
 end

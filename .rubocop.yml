@@ -19,3 +19,4 @@ AllCops:
     - '**/Gemfile'
     - 'vendor/**/*'
     - '.git/**/*'
+    - 'app/models/**/*'

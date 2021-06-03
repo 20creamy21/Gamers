@@ -1,5 +1,4 @@
 class RelationshipsController < ApplicationController
-
   def create
     following = current_user.follow(params[:follow_id])
     if following.save
@@ -17,5 +16,4 @@ class RelationshipsController < ApplicationController
       flash.now[:alert] = 'ユーザーのフォロー解除に失敗しました'
     end
   end
-
 end
