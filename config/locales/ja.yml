@@ -10,11 +10,22 @@ ja:
         genre: ジャンル
         thought: 感想
         evaluation: 評価
+
     models:
       comment: コメント
     attributes:
       comment:
         comment: コメント
+
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+
   time:
     formats:
       default: "%Y/%m/%d %H:%M"

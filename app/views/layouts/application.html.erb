@@ -27,23 +27,20 @@
                   <%= link_to "投稿一覧", posts_path, class: 'nav-link text-dark' %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "投稿一覧（フォローユーザーのみ）", users_path, class: 'nav-link text-dark' %>
+                  <%= link_to "ホーム", users_path, class: 'nav-link text-dark' %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "投稿", new_post_path, class: 'nav-link text-dark' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "ランキング", ranks_index_path, class: 'nav-link text-dark' %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
                 </li>
               <% else %>
                 <li class="nav-item">
-                  <%= link_to "TOP", root_path, class: 'nav-link text-dark' %>
+                  <%= link_to "トップ", root_path, class: 'nav-link text-dark' %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "ABOUT", about_path, class: 'nav-link text-dark' %>
+                  <%= link_to "アバウト", about_path, class: 'nav-link text-dark' %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "サインアップ", new_user_registration_path, class: 'nav-link text-dark' %>
