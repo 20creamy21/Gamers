@@ -1,23 +1,21 @@
-<h2>トップ</h2>
+<div class="container mt-5 mb-5">
 
-<p>
- ようこそ、Gamersへ！
-</p>
+  <h2 class="row">トップ</h2>
 
-<p>
- このサイトは、ゲームの感想を投稿するSNSサイトになります。
-</p>
+    <p class="justify-content-center d-flex mt-5 h4">
+      ようこそ、Gamersへ！<br>
+      このサイトは、ゲームの感想を投稿するSNSサイトになります。<br>
+      利用には会員登録が必要になります。
+    </p>
 
-<p>
- 利用にはには会員登録が必要になります。
-</p>
+  <h4 class="row mt-5">新規会員登録</h4>
+  <div class="col">
+    <div><%= link_to "こちら", new_user_registration_path %>からサインアップしてください。</div>
+  </div>
 
-<h2>新規会員登録</h2>
-<div>
-  <div><%= link_to "こちら", new_user_registration_path %>からサインアップしてください。</div>
-</div>
+  <h4 class="row mt-5">既に登録済みの方</h4>
+  <div class="col">
+    <div><%= link_to "こちら", new_user_session_path %>からログインしてください。</div>
+  </div>
 
-<h2>既に登録済みの方</h2>
-<div>
-  <div><%= link_to "こちら", new_user_session_path %>からログインしてください。</div>
 </div>
