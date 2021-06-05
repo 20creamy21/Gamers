@@ -2,7 +2,7 @@
 
   <h2 class="row">投稿一覧</h2>
 
-  <div class="row mt-3">
+  <div class="row mt-4">
     <%= search_form_for @q do |f| %>
     <%= f.label :name, "キーワード" %>
     <%= f.search_field :name_or_title_or_user_name_cont %>
@@ -10,7 +10,7 @@
     <% end %>
   </div>
 
-  <div class="row mt-3">
+  <div class="row mt-4">
   <div class="col">
     <table  class="col table table-striped">
       <thead>
@@ -47,5 +47,5 @@
     </script>
   </div>
   </div>
-  
+
 </div>

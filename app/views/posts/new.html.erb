@@ -1,97 +1,107 @@
-<h2>投稿</h2>
+<div class="container mt-5 mb-5">
 
-<div class="col mt-4">
-  <% if @post.errors.any? %>
-    <% @post.errors.full_messages.each do |message| %>
-    <div class="col text-danger"><%= message %>。</div>
+  <h2 class="row">投稿</h2>
+
+  <div class="col mt-4">
+    <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |message| %>
+      <div class="col text-danger"><%= message %>。</div>
+      <% end %>
     <% end %>
+  </div>
+
+  <%= form_with model: @post, url: posts_path, local:true do |f| %>
+
+    <div class="field row mt-5 text-center">
+     <label for="title" class="col">タイトル</label>
+     <div class="col"><%= f.text_field :title, id:"title" %></div>
+    </div>
+
+    <div class="field row mt-3 text-center">
+     <label for="name" class="col">ゲーム名</label>
+     <div class="col"><%= f.text_field :name, id:"name" %></div>
+    </div>
+
+    <div class="field row mt-3 text-center">
+     <label for="platform" class="col">プラットフォーム</label>
+     <div class="col">
+       <div>
+         <%= f.radio_button :platform, :PlayStation4 %>
+         <%= f.label :platform, "PlayStation4", id:"PlayStation4" %>
+   			 </div>
+   			 <div>
+         <%= f.radio_button :platform, :PlayStation5 %>
+   			   <%= f.label :platform, "PlayStation5" %>
+   			 </div>
+   			 <div>
+         <%= f.radio_button :platform, :NintendoSwitch %>
+   			   <%= f.label :platform, "NintendoSwitch" %>
+   			 </div>
+   			 <div>
+         <%= f.radio_button :platform, :Nintendo3DS %>
+   			   <%= f.label :platform, "Nintendo3DS" %>
+   			 </div>
+   			 <div>
+         <%= f.radio_button :platform, :その他のプラットフォーム %>
+   			   <%= f.label :platform, "その他のプラットフォーム" %>
+   			 </div>
+     </div>
+    </div>
+
+    <div class="field row mt-3 text-center">
+     <label for="genre" class="col">ジャンル</label>
+     <div class="col">
+       <div>
+         <%= f.radio_button :genre, :アクション %>
+    			  <%= f.label :genre, "アクション" %>
+    			</div>
+    			<div>
+         <%= f.radio_button :genre, :シューティング %>
+    			  <%= f.label :genre, "シューティング" %>
+    			</div>
+    			<div>
+         <%= f.radio_button :genre, :レーシング %>
+    			  <%= f.label :genre, "レーシング" %>
+    			</div>
+    			<div>
+         <%= f.radio_button :genre, :ロールプレイング %>
+    			  <%= f.label :genre, "ロールプレイング" %>
+    			</div>
+    			<div>
+         <%= f.radio_button :genre, :その他のジャンル %>
+    			  <%= f.label :genre, "その他のジャンル" %>
+    			</div>
+     </div>
+    </div>
+
+    <div id="evaluate_stars" class="field row mt-3 text-center">
+      <label class="col">評価</label>
+      <div class="col">
+        <script>
+        $('#evaluate_stars').raty({
+          starOn: "<%= asset_path('star-on.png') %>",
+          starOff: "<%= asset_path('star-off.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          scoreName: 'post[evaluation]'
+        });
+        </script>
+      </div>
+    </div>
+
+    <div class="field row mt-3 text-center">
+     <label for="thought" class="col">感想</label>
+     <div class="col"><%= f.text_field :thought, id:"thought" %></div>
+    </div>
+
+    <div class="field row mt-3 text-center">
+     <label for="note" class="col">備考</label>
+     <div class="col"><%= f.text_field :note, id:"note" %></div>
+    </div>
+
+    <div class="actions col text-center mt-5">
+      <%= f.submit "投稿する", class:"btn btn-success" %>
+    </div>
+
   <% end %>
+
 </div>
-
-<%= form_with model: @post, url: posts_path, local:true do |f| %>
-
-  <div>
-   <label for="title">タイトル</label>
-   <div><%= f.text_field :title, id:"title" %></div>
-  </div>
-
-  <div>
-   <label for="name">ゲーム名</label>
-   <div><%= f.text_field :name, id:"name" %></div>
-  </div>
-
-  <div>
-   <label for="platform">プラットフォーム</label>
-   <div>
-    <%= f.radio_button :platform, :PlayStation4 %>
-    <%= f.label :platform, "PlayStation4", id:"PlayStation4" %>
-			</div>
-			<div>
-    <%= f.radio_button :platform, :PlayStation5 %>
-			 <%= f.label :platform, "PlayStation5" %>
-			</div>
-			<div>
-    <%= f.radio_button :platform, :NintendoSwitch %>
-			 <%= f.label :platform, "NintendoSwitch" %>
-			</div>
-			<div>
-    <%= f.radio_button :platform, :Nintendo3DS %>
-			 <%= f.label :platform, "Nintendo3DS" %>
-			</div>
-			<div>
-    <%= f.radio_button :platform, :その他のプラットフォーム %>
-			 <%= f.label :platform, "その他のプラットフォーム" %>
-			</div>
-  </div>
-
-  <div>
-   <label for="genre">ジャンル</label>
-   <div>
-    <%= f.radio_button :genre, :アクション %>
-			 <%= f.label :genre, "アクション" %>
-			</div>
-			<div>
-    <%= f.radio_button :genre, :シューティング %>
-			 <%= f.label :genre, "シューティング" %>
-			</div>
-			<div>
-    <%= f.radio_button :genre, :レーシング %>
-			 <%= f.label :genre, "レーシング" %>
-			</div>
-			<div>
-    <%= f.radio_button :genre, :ロールプレイング %>
-			 <%= f.label :genre, "ロールプレイング" %>
-			</div>
-			<div>
-    <%= f.radio_button :genre, :その他のジャンル %>
-			 <%= f.label :genre, "その他のジャンル" %>
-			</div>
-  </div>
-
-  <div id="evaluate_stars">
-    <label>評価</label>
-  </div>
-  <script>
-  $('#evaluate_stars').raty({
-    starOn: "<%= asset_path('star-on.png') %>",
-    starOff: "<%= asset_path('star-off.png') %>",
-    starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'post[evaluation]' //登録するモデル名とカラム名を記述
-  });
-  </script>
-
-  <div>
-   <label for="thought">感想</label>
-   <div><%= f.text_field :thought, id:"thought" %></div>
-  </div>
-
-  <div>
-   <label for="note">備考</label>
-   <div><%= f.text_field :note, id:"note" %></div>
-  </div>
-
-  <div>
-    <%= f.submit "投稿する" %>
-  </div>
-
-<% end %>
