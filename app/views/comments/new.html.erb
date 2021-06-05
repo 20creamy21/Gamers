@@ -1,10 +1,12 @@
 <h2>コメント</h2>
 
-<% if @comment.errors.any? %>
-  <% @comment.errors.full_messages.each do |message| %>
-  <div><%= message %></div>
+<div class="col mt-4">
+  <% if @comment.errors.any? %>
+    <% @comment.errors.full_messages.each do |message| %>
+    <div class="col text-danger"><%= message %>。</div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <%= form_with model: @comment, url: comments_path(post_id: @comment.post_id), local:true do |f| %>
   <div><%= f.text_field :comment %></div>

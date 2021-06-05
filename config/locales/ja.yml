@@ -1,8 +1,15 @@
 ja:
   activerecord:
     models:
+      user: ユーザー
       post: 投稿
+      comment: コメント
     attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認用）
       post:
         title: タイトル
         name: ゲーム名
@@ -10,21 +17,12 @@ ja:
         genre: ジャンル
         thought: 感想
         evaluation: 評価
-
-    models:
-      comment: コメント
-    attributes:
       comment:
         comment: コメント
-
-    models:
-      user: ユーザー
-    attributes:
+  devise:
+    failure:
       user:
-        name: 名前
-        email: メールアドレス
-        password: パスワード
-        password_confirmation: パスワード（確認用）
+        invalid: メールアドレス、パスワードは入力必須です。
 
   time:
     formats:

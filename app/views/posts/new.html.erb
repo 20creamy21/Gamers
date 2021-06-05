@@ -1,10 +1,12 @@
 <h2>投稿</h2>
 
-<% if @post.errors.any? %>
-  <% @post.errors.full_messages.each do |message| %>
-  <div><%= message %></div>
+<div class="col mt-4">
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |message| %>
+    <div class="col text-danger"><%= message %>。</div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <%= form_with model: @post, url: posts_path, local:true do |f| %>
 
