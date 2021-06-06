@@ -21,3 +21,6 @@
 
 //= require jquery.raty.js
 //= require_tree .
+
+//= require jquery
+//= require rails-ujs

@@ -1,0 +1,2 @@
+$("#like-button-zone_<%= @follow_user.id %>").html("<%= j(render partial: 'likes/like', locals: { user: @user }) %>");
+$(".like_balance").html("<%= @sending_user.like_balance %>")

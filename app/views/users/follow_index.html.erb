@@ -1,18 +1,30 @@
-<h2>フォロー中一覧</h2>
+<div class="container mt-5 mb-5">
 
-<table>
-  <thead>
-    <tr>
-      <th>ユーザー名</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <td>
-        <%= link_to user.name, user_path(user) %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <h2 class="row">フォローユーザー</h2>
+
+  <div class="row mt-4">
+  <div class="col">
+    <table class="col table table-striped">
+      <thead>
+        <tr>
+          <th>ユーザー名</th>
+          <th>投稿数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to user.name, user_path(user) %>
+          </td>
+          <td>
+            <%= user.posts.count %>件
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+</div>

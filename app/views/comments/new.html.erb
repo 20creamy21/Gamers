@@ -1,14 +1,18 @@
-<h2>コメント</h2>
+<div class="container mt-5 mb-5">
 
-<div class="col mt-4">
-  <% if @comment.errors.any? %>
-    <% @comment.errors.full_messages.each do |message| %>
-    <div class="col text-danger"><%= message %>。</div>
+  <h2 class="row">コメント</h2>
+
+  <div class="col mt-5">
+    <% if @comment.errors.any? %>
+      <% @comment.errors.full_messages.each do |message| %>
+      <div class="col text-danger"><%= message %>。</div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<%= form_with model: @comment, url: comments_path(post_id: @comment.post_id), local:true do |f| %>
-  <div><%= f.text_field :comment %></div>
-  <div><%= f.submit "投稿する" %></div>
-<% end %>
+  <%= form_with model: @comment, url: comments_path(post_id: @comment.post_id), local:true do |f| %>
+    <div class="col"><%= f.text_field :comment %></div>
+    <div class="col mt-5 text-center"><%= f.submit "投稿する", class:"btn btn-success" %></div>
+  <% end %>
+
+</div>

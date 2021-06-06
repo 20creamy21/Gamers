@@ -1,58 +1,75 @@
-<h2>ユーザー情報</h2>
+<div class="container mt-5 mb-5">
 
-<div>
-  <div>ユーザー名</div>
-  <div><%= @user.name %></div>
-</div>
+  <h2 class="row">ユーザー情報</h2>
 
-<div>
-  <div>フォロー中</div>
-  <div><%= link_to @user.followings.count, controller: "users", action: "follow_index", id: @user %></div>
-</div>
+  <div class="field row mt-5 text-center">
+    <div class="col">ユーザー名</div>
+    <div class="col"><%= @user.name %></div>
+  </div>
 
-<div>
-  <div>フォロワー</div>
-  <div><%= link_to @user.followers.count, controller: "users", action: "follower_index", id: @user %></div>
-</div>
-
-<div>
-  <div>投稿一覧</div>
-  <% if @post.count == 0 %>
-    <di>投稿はありません</di>
-  <% else %>
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>タイトル</th>
-            <th>ゲーム名</th>
-            <th>評価</th>
-            <th>投稿日時</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @user.posts.each do |post| %>
-          <tr>
-            <td><%= link_to post.title, post_path(post) %></td>
-            <td><%= post.name %></td>
-            <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
-            <td><%= l post.created_at %></td>
-            <td><%= link_to "投稿削除", post_path(post), method: :delete %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-
-      <script>
-        $('.post-evaluation').raty({
-         readOnly: true,
-          score: function() {
-          return $(this).attr('data-score');
-          },
-          path: '/assets/'
-          });
-      </script>
-    </div>
+  <% if @user.id == current_user.id %>
+  <div class="row mt-3 text-center">
+    <div class="col"></div>
+    <div class="col"><%= link_to "ユーザー名変更", edit_user_path(@user), class:"btn btn-success" %></div>
+  </div>
   <% end %>
+
+  <div class="field row mt-4 text-center">
+    <div class="col">フォロー中</div>
+    <% if @user.followings.count == 0 %>
+      <div class="col"><%= @user.followings.count %>人</div>
+    <% else %>
+      <div class="col"><%= link_to @user.followings.count, controller: "users", action: "follow_index", id: @user %>人</div>
+    <% end %>
+  </div>
+
+  <div class="field row mt-4 text-center">
+    <div class="col">フォロワー</div>
+    <% if @user.followers.count == 0 %>
+      <div class="col"><%= @user.followers.count %>人</div>
+    <% else %>
+      <div class="col"><%= link_to @user.followers.count, controller: "users", action: "follower_index", id: @user %>人</div>
+    <% end %>
+  </div>
+
+  <div class="col mt-5 h4">投稿一覧</div>
+    <% if @post.count == 0 %>
+      <div class="col mt-4">投稿はありません。</div>
+    <% else %>
+      <div class="col">
+        <table class="col table table-striped mt-4">
+          <thead>
+            <tr>
+              <th>タイトル</th>
+              <th>ゲーム名</th>
+              <th>評価</th>
+              <th>投稿日時</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user.posts.each do |post| %>
+            <tr>
+              <td><%= link_to post.title, post_path(post) %></td>
+              <td><%= post.name %></td>
+              <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
+              <td><%= l post.created_at %></td>
+              <td><%= link_to "投稿削除", post_path(post), method: :delete %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <script>
+          $('.post-evaluation').raty({
+           readOnly: true,
+            score: function() {
+            return $(this).attr('data-score');
+            },
+            path: '/assets/'
+            });
+        </script>
+      </div>
+    <% end %>
+
 </div>
