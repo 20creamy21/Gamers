@@ -7,22 +7,22 @@
       <%= render "devise/shared/error_messages", resource: resource %>
     </div>
 
-    <div class="field row mt-5 text-center">
+    <div class="field row mt-5 text-center box15">
       <div class="col"><%= f.label :名前 %></div>
       <div class="col"><%= f.text_field :name, autofocus: true %></div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
       <div class="col"><%= f.label :メールアドレス %></div>
       <div class="col"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
       <div class="col"><%= f.label :パスワード %></div>
       <div class="col"><%= f.password_field :password, autocomplete: "new-password" %></div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
       <div class="col"><%= f.label :パスワード（確認用） %></div>
       <div class="col"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></div>
     </div>

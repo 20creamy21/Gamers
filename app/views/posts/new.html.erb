@@ -12,17 +12,17 @@
 
   <%= form_with model: @post, url: posts_path, local:true do |f| %>
 
-    <div class="field row mt-5 text-center">
+    <div class="field row mt-5 text-center box15">
      <label for="title" class="col">タイトル</label>
      <div class="col"><%= f.text_field :title, id:"title" %></div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
      <label for="name" class="col">ゲーム名</label>
      <div class="col"><%= f.text_field :name, id:"name" %></div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
      <label for="platform" class="col">プラットフォーム</label>
      <div class="col">
        <div>
@@ -48,7 +48,7 @@
      </div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
      <label for="genre" class="col">ジャンル</label>
      <div class="col">
        <div>
@@ -74,7 +74,7 @@
      </div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
       <label class="col">評価</label>
       <div class="col" id="evaluate_stars">
         <script>
@@ -88,12 +88,12 @@
       </div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
      <label for="thought" class="col">感想</label>
      <div class="col"><%= f.text_field :thought, id:"thought" %></div>
     </div>
 
-    <div class="field row mt-3 text-center">
+    <div class="field row mt-3 text-center box15">
      <label for="note" class="col">備考</label>
      <div class="col"><%= f.text_field :note, id:"note" %></div>
     </div>

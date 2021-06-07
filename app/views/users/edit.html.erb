@@ -3,7 +3,7 @@
   <h2 class="row">ユーザー名変更</h2>
 
   <%= form_with model:@user, local:true do |f| %>
-    <div class="field row mt-5 text-center">
+    <div class="field row mt-5 text-center box15">
       <label for="inputName" class="col">ユーザー名</label>
       <div class="col"><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"ユーザー名"%></div>
     </div>
