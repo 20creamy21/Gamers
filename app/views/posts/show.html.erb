@@ -12,7 +12,6 @@
     <div class="col"><%= render 'relationships/follow_button', user: @user %></div>
   </div>
 
-
   <div class="field row mt-5 text-center">
     <div class="col">ゲーム名</div>
     <div class="col"><%= @post.name %></div>
@@ -37,7 +36,9 @@
       score: function() {
       return $(this).attr('data-score');
       },
-      path: '/assets/'
+      starHalf: '<%= asset_path("star-half.png") %>',
+      starOff: '<%= asset_path("star-off.png") %>',
+      starOn: '<%= asset_path("star-on.png") %>'
       });
     </script>
   </div>
