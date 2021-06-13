@@ -54,7 +54,11 @@
               <td><%= post.name %></td>
               <td class="post-evaluation" data-score="<%= post.evaluation %>"></td>
               <td><%= l post.created_at %></td>
-              <td><%= link_to "投稿削除", post_path(post), method: :delete, class:"btn btn-danger" %></td>
+              <% if current_user.id == @user.id %>
+                <td><%= link_to "投稿削除", post_path(post), method: :delete, class:"btn btn-danger" %></td>
+              <% else %>
+                <td></td>
+              <% end %>
             </tr>
             <% end %>
           </tbody>
