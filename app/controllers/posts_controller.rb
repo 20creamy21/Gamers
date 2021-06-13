@@ -13,11 +13,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    # search = params[:q][:name_or_title_cont]
-    # @result = Post.where("name like '%#{search}%' or title like '%#{search}%'")
     @q = Post.ransack(params[:q])
-    # @posts = @q.result(distinct: true)
-    @posts = Post.page(params[:page]).reverse_order
+    @posts = @q.result(distinct: true)
+    @posts = @posts.page(params[:page]).reverse_order
   end
 
   def show
