@@ -23,6 +23,7 @@ ja:
     failure:
       user:
         invalid: メールアドレス、パスワードは入力必須です。
+        not_found_in_database: メールアドレス、パスワードは入力必須です。
 
   time:
     formats:
