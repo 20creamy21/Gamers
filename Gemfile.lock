@@ -298,7 +298,9 @@ DEPENDENCIES
   rails (~> 5.2.5)
   rails-i18n
   ransack
+  rubocop
   rubocop-airbnb
+  rubocop-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
