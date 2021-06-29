@@ -7,7 +7,8 @@
     <div class="col"><%= @user.name %></div>
   </div>
 
-  <% if @user.id == current_user.id %>
+  <%# if @user.id == current_user.id %>
+  <% if @user.me?(current_user.id) %>
   <div class="row mt-3 text-center">
     <div class="col"></div>
     <div class="col"><%= link_to "ユーザー名変更", edit_user_path(@user), class:"btn btn-success" %></div>
