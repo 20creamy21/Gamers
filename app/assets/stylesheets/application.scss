@@ -17,19 +17,6 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
- .wrapper{
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 120px;
-    box-sizing: border-box;
- }
-
- footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
 .nav-item {
     margin-right: 20px;
 }
@@ -37,15 +24,26 @@
 .box15 {
     padding: 0.2em 0.5em;
     margin: 2em 0;
-    background: #DDDDDD;
-    box-shadow: 0px 0px 0px 10px #DDDDDD;
-    border: dashed 2px #A9A9A9;
-    border-radius: 8px;
+    background: linear-gradient(-135deg, #E4A972, #9941D8) ;
+    border: dashed 2px;
 }
 
 body {
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image:repeating-conic-gradient(red,black 10%);
+  background: linear-gradient(-135deg, #E4A972, #9941D8) ;
+}
+
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(-200deg, #E4A972, #9941D8) ;
+}
+
+footer {
+  margin-top: auto;
+  background: linear-gradient(-200deg, #E4A972, #9941D8) ;
 }

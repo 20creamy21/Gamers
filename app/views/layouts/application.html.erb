@@ -9,52 +9,55 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-    <header class="shadow bg-light">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-              <% if user_signed_in? %>
-                <li class="nav-item">
-                  <%= link_to "ホーム", users_path, class: 'nav-link text-dark' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "マイページ", user_path(current_user.id), class: 'nav-link text-dark' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "投稿一覧", posts_path, class: 'nav-link text-dark' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "投稿", new_post_path, class: 'nav-link text-dark' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
-                </li>
-              <% else %>
-                <li class="nav-item">
-                  <%= link_to "トップ", root_path, class: 'nav-link text-dark' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "アバウト", about_path, class: 'nav-link text-dark' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "サインアップ", new_user_registration_path, class: 'nav-link text-dark' %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
-                </li>
-              <% end %>
-            </ul>
+  <body>
+    <div id="wrapper">
+      <header class="shadow">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto">
+                <% if user_signed_in? %>
+                  <li class="nav-item">
+                    <%= link_to "ホーム", users_path, class: 'nav-link text-dark' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "マイページ", user_path(current_user.id), class: 'nav-link text-dark' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "投稿一覧", posts_path, class: 'nav-link text-dark' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "投稿", new_post_path, class: 'nav-link text-dark' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
+                    <%= link_to "トップ", root_path, class: 'nav-link text-dark' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "アバウト", about_path, class: 'nav-link text-dark' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "サインアップ", new_user_registration_path, class: 'nav-link text-dark' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
 
-    <%= yield %>
+      <%= yield %>
 
-    <footer class="bg-secondary shadow-sm text-white pt-5 pb-5">
-      <div class="h4 text-center">Gamers</div>
-      <div class="text-center mt-3">ゲームの感想を投稿するSNSサイト</div>
-    </footer>
+      <footer class="shadow-sm text-white pt-5 pb-5">
+        <div class="h4 text-center">Gamers</div>
+        <div class="text-center mt-3">ゲームの感想を投稿するSNSサイト</div>
+      </footer>
+    </div>
   </body>
 </html>
