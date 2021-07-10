@@ -13,7 +13,7 @@
   <div class="row mt-4">
   <div class="col">
     <table class="col table table-striped">
-      <thead>
+      <thead class="text-center">
         <tr>
           <th>タイトル</th>
           <th>ゲーム名</th>
@@ -22,7 +22,7 @@
           <th>投稿日時</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         <% @posts.each do |post| %>
           <tr>
             <td><%= link_to post.title, post_path(post) %></td>
