@@ -1,6 +1,6 @@
 <div class="container mt-5 mb-5">
 
-  <h2 class="row">ホーム（フォローユーザーのみの投稿）</h2>
+  <h2 class="row">ホーム</h2>
 
   <div class="row mt-4">
     <%= search_form_for @q, url: users_path do |f| %>
@@ -10,9 +10,9 @@
     <% end %>
   </div>
 
-  <div class="row mt-4">
+  <div class="row mt-4 text-center">
   <div class="col">
-    <table   class="col table table-striped">
+    <table class="col table table-striped">
       <thead>
         <tr>
           <th>タイトル</th>
